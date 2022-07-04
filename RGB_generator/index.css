@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: grey;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.main {
+    height: 400px;
+    width: 250px;
+    background: #333;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: verdana;
+}
+
+#resul {
+    height: 40px;
+    width: 80%;
+    border: none;
+    outline: none;
+    outline: none;
+    border-radius: 50px;
+    text-align: center;
+}
+
+
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 10px;
+    width: 80%;
+    border-radius: 50px;
+    outline: none;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main #vermelho {
+    background: linear-gradient(90deg, #000, red);
+}
+
+.main #verde {
+    background: linear-gradient(90deg, #000, green);
+}
+
+.main #azul {
+    background: linear-gradient(90deg, #000, blue);
+}
+
+.title span {
+    --total: calc(var(--duration) + var(--delay));
+    position: relative;
+    display: block;
+    color: transparent;
+    overflow: hidden;
+    animation: revealText 1s var(--total) forwards;
+}
+
+.title span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #bb93fc;
+    animation:
+        rollIn var(--duration) var(--delay) forwards,
+        rollOut var(--duration) var(--total) forwards;
+}
+
+.title span:nth-child(2)::after {
+    border-top: 3px solid #896ab9;
+}
+
+@keyframes revealText {
+    to {
+        color: black;
+    }
+}
+
+@keyframes rollIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes rollOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(105%);
+    }
+}
